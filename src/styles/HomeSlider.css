@@ -1,0 +1,9 @@
+/* HomeSlider.css */
+.home-slider-container .slick-list {
+    padding: 0 20px; /* Add horizontal padding */
+  }
+  
+  .home-slider-container .slick-slide {
+    margin: 0 5px; /* Add horizontal margin between slides */
+  }
+  

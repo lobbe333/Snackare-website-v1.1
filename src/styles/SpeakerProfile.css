@@ -1,0 +1,176 @@
+.speakerProfile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 70px;
+  margin-bottom: 40px;
+}
+
+.speakerProfile .carousel.carousel-slider .slide {
+  width: 50px !important;
+}
+
+.speakerProfile-name-bookButton-container {
+  display: flex;
+  align-items: center;
+  gap: 250px;
+}
+
+.speakerProfile-content {
+  display: flex;
+  align-items: start;
+  gap: 30px;
+}
+
+.speakerProfile-header-text {
+  width: 500px;
+}
+
+.speakerProfile-image-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.speakerProfile-image {
+  height: 600px;
+  width: 400px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+
+.speakerProfile-header-name {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 60px;
+  color: #F16876;
+}
+
+.speakerProfile-header-longDescription {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 40px;
+  color: #273B7B;
+  margin: 0;
+}
+
+.speakerProfile-exampleLectures-header {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 30px;
+  color: #F16876;
+  margin-bottom: 10px;
+}
+
+.speakerProfile-reviews-header {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 30px;
+  color: #273B7B;
+  margin-bottom: 10px;
+}
+
+.speakerProfile-reviews-container {
+  margin: 20px;
+}
+
+.speakerProfile-review {
+  background-color: transparent;
+  border-radius: 10px;
+  border: 2px solid #F16876;
+}
+
+.speakerProfile-review-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: black;
+  padding: 10px;
+}
+
+.slick-list {
+  width: 350px;
+}
+
+.book-speaker-button {
+  height: 50px;
+  width: 200px;
+  background-color: transparent;
+  border-radius: 0px;
+  font-size: 16px;
+  color: #273B7B;
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+  border: 2px solid #273B7B;
+}
+
+.book-speaker-button:hover {
+  background-color: #273B7B;
+  color: white;
+  border: none;
+}
+
+@media (max-width: 767px) {
+
+  .speakerProfile .carousel.carousel-slider .slide {
+    width: 45px !important;
+  }
+
+  .speakerProfile {
+    margin-left: 20px;
+  }
+
+  .speakerProfile-name-bookButton-container {
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+  }
+
+  .speakerProfile-content {
+    flex-direction: column;
+  }
+
+  .speakerProfile-header-text {
+    width: 100%;
+  }
+
+  .speakerProfile-image {
+    height: 300px;
+    width: 90vw;
+    object-position: top;
+  }
+
+  .speakerProfile-header-name {
+    font-size: 40px;
+    margin-bottom: 0;
+  }
+
+  .speakerProfile-header-longDescription {
+    font-size: 30px;
+  }
+
+  .speakerProfile-exampleLectures-header {
+    font-size: 24px;
+  }
+
+  .speakerProfile-reviews-header {
+    font-size: 24px;
+  }
+
+  .slick-list {
+    width: 80vw;
+  }
+
+  .book-speaker-button {
+    width: 337px;
+    font-size: 17px;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    background-color: #273B7B;
+    color: white;
+  }
+}
