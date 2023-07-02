@@ -3,6 +3,8 @@ import RequestForm from '../../src/components/RequestForm';
 import { fetchSpeakers } from "../_app";
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // This imports the styles
+import { NextSeo } from 'next-seo';
+
 
 function generateSlug(name) {
   return name
@@ -90,6 +92,23 @@ export default function SpeakerProfilePage({ currentSpeaker }) {
 
   return (
     <div className='speakerProfile'>
+      <NextSeo
+        title={`${currentSpeaker.name} | Föreläsare | Snackare talarnätverk`}
+        description={currentSpeaker.shortDescription}
+        openGraph={{
+          url: `https://www.snackare.com/speakers/${generateSlug(currentSpeaker.name)}`,
+          title: `${currentSpeaker.name} | Föreläsare | Snackare talarnätverk`,
+          description: currentSpeaker.shortDescription,
+          images: [
+            {
+              url: currentSpeaker.imgUrl,
+              alt: currentSpeaker.name,
+            },
+          ],
+          type: 'profile', // Vi antar att 'profile' är lämpligast eftersom sidan representerar en individuell talare
+          locale: 'sv_SE', // Ange att innehållet är på svenska för Sverige
+        }}
+      />
       <div className='speakerProfile-name-bookButton-container'>
         <h1 className='speakerProfile-header-name'>{currentSpeaker.name}</h1>
         <button className='book-speaker-button' onClick={handleOpenRequestForm}>{`Boka ${currentSpeaker.name}`}</button>
