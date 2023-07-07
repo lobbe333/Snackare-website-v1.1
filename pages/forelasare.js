@@ -9,8 +9,6 @@ import { NextSeo } from 'next-seo';
 export async function getStaticProps(context) {
     const speakers = await fetchSpeakers();
 
-    console.log('Speakers fetched in getServerSideProps:', speakers);
-
     return {
         props: {
             speakers,
@@ -21,7 +19,6 @@ export async function getStaticProps(context) {
 
 
 export default function Forelasare({ speakers, speakersHeader, isFlipped }) {
-    console.log('Speakers in component:', speakers);
     const router = useRouter();
     const [search, setSearch] = useState("")
 

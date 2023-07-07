@@ -23,7 +23,6 @@ export async function fetchSpeakers() {
   const speakersCollectionRef = collection(db, 'speakers');
   const speakerSnapshot = await getDocs(speakersCollectionRef);
   const speakerList = speakerSnapshot.docs.map(doc => doc.data());
-  console.log("Fetched speakers:", speakerList);
   return speakerList;
 }
 
