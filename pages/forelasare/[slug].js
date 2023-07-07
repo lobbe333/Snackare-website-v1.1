@@ -93,8 +93,8 @@ export default function SpeakerProfilePage({ currentSpeaker }) {
   return (
     <div className='speakerProfile'>
       <NextSeo
-        title={`${currentSpeaker.name} | Föreläsare | Snackare talarnätverk`}
-        description={currentSpeaker.shortDescription}
+        title={`${currentSpeaker.name} | ${currentSpeaker.roles.map(role => role.toLowerCase()).join(", ")} | Snackare talarnätverk`}
+        description={`${currentSpeaker.shortDescription}. Ämnen: ${currentSpeaker.topics.map(topic => topic.toLowerCase()).join(", ")}`}
         openGraph={{
           url: `https://www.snackare.com/speakers/${generateSlug(currentSpeaker.name)}`,
           title: `${currentSpeaker.name} | Föreläsare | Snackare talarnätverk`,
@@ -119,15 +119,19 @@ export default function SpeakerProfilePage({ currentSpeaker }) {
             <img src={currentSpeaker.imgUrl} alt={currentSpeaker.name} className='speakerProfile-image' />
           </div>
           <div className='speakerProfile-reviews-container hide-on-mobile'>
-            <h1 className='speakerProfile-reviews-header'>Vad andra säger</h1>
-            <Carousel
-              showThumbs={false}
-              autoPlay
-              infiniteLoop
-              interval={5000}
-            >
-              {reviewElements}
-            </Carousel>
+            {reviewElements.length > 0 && (
+              <>
+                <h1 className='speakerProfile-reviews-header'>Vad andra säger</h1>
+                <Carousel
+                  showThumbs={false}
+                  autoPlay
+                  infiniteLoop
+                  interval={5000}
+                >
+                  {reviewElements}
+                </Carousel>
+              </>
+            )}
           </div>
         </div>
         <div className='speakerProfile-header-text'>
@@ -137,15 +141,19 @@ export default function SpeakerProfilePage({ currentSpeaker }) {
           {exampleLecturesElements}
         </div>
         <div className='speakerProfile-reviews-container hide-on-desktop'>
-          <h1 className='speakerProfile-reviews-header'>Vad andra säger</h1>
-          <Carousel
-            showThumbs={false}
-            autoPlay
-            infiniteLoop
-            interval={5000}
-          >
-            {reviewElements}
-          </Carousel>
+          {reviewElements.length > 0 && (
+            <>
+              <h1 className='speakerProfile-reviews-header'>Vad andra säger</h1>
+              <Carousel
+                showThumbs={false}
+                autoPlay
+                infiniteLoop
+                interval={5000}
+              >
+                {reviewElements}
+              </Carousel>
+            </>
+          )}
         </div>
       </div>
       {showRequestForm && <RequestForm

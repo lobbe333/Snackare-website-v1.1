@@ -1,4 +1,4 @@
-import { React, useState} from 'react'
+import { React, useState } from 'react'
 import { NavigateBefore } from '@mui/icons-material';
 import { useRouter } from 'next/router';
 
@@ -17,17 +17,17 @@ function translateRole(role) {
 
 function generateSlug(name) {
   return name
-      .toLowerCase()
-      .replace(/å/g, 'a')
-      .replace(/ä/g, 'a')
-      .replace(/ö/g, 'o')
-      .replace(/[^a-z0-9]/g, '-')
-      .replace(/-+/g, '-')
-      .replace(/^-|-$/g, '');
+    .toLowerCase()
+    .replace(/å/g, 'a')
+    .replace(/ä/g, 'a')
+    .replace(/ö/g, 'o')
+    .replace(/[^a-z0-9]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
 }
 
 export default function Card({ speaker }) {
-  const router = useRouter(); 
+  const router = useRouter();
   const [isFlipped, setIsFlipped] = useState(false);
   const [clickCount, setClickCount] = useState(0)
 
@@ -62,7 +62,9 @@ export default function Card({ speaker }) {
             <img src={speaker.imgUrl} className='card-image' alt={speaker.name} />
             <div className='name-and-roles-container'>
               <h2 className='name'>{speaker.name}</h2>
-              <div className='roles-container'>{rolesElements}</div>
+              <div className='roles-container'>
+                {rolesElements}
+              </div>
             </div>
           </div>
         </div>

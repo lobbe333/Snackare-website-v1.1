@@ -114,6 +114,23 @@ export default function Forelasare({ speakers, speakersHeader, isFlipped }) {
 
     return (
         <div>
+            <NextSeo
+                title="Våra Föreläsare | Snackare talarnätverk"
+                description="Utforska Snackare talarnätverks föreläsare, moderatorer och underhållare, skräddarsydda för alla evenemang och tillfällen."
+                openGraph={{
+                    url: "https://www.snackare.com/speakers",
+                    title: "Våra Föreläsare | Snackare talarnätverk",
+                    description: "Utforska Snackare talarnätverk av professionella föreläsare, moderatorer och underhållare, skräddarsydda för alla dina evenemang och tillfällen.",
+                    type: 'website',
+                    locale: 'sv_SE',
+                    images: [
+                        {
+                            url: 'URL_TILL_EN_REPRESENTATIV_BILD_FÖR_DIN_SIDA',
+                            alt: 'Bildbeskrivning',
+                        },
+                    ],
+                }}
+            />
             <div className="header-search-container">
                 <div className='headers-container'>
                     <h1 className='speakers-header'>{categoryHeader ? categoryHeader : "Alla Snackare"}</h1>

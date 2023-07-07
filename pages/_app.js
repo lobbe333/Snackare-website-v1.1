@@ -5,8 +5,8 @@ import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../src/config/firebase';
 import Navbar from '../src/components/Navbar';
 import Footer from '../src/components/Footer';
-import TidioChat from '../src/components/TidioChat'; 
-import { v4 as uuidv4 } from 'uuid'; 
+import TidioChat from '../src/components/TidioChat';
+import { v4 as uuidv4 } from 'uuid';
 import '../src/styles/About.css';
 import '../src/styles/Card.css';
 import '../src/styles/Footer.css';
@@ -29,7 +29,7 @@ export async function fetchSpeakers() {
 
 function MyApp({ Component, pageProps }) {
   const [visitorId, setVisitorId] = useState(null);
-  
+
   useEffect(() => {
     let visitorId = localStorage.getItem('visitorId');
     if (!visitorId) {
@@ -38,9 +38,9 @@ function MyApp({ Component, pageProps }) {
     }
     setVisitorId(visitorId);
   }, []);
-  
+
   // Tidio-nyckel och besökardata
-  const tidioKey = '3x3nqoesg5re64kbwcp6esvufvwasoqn'; 
+  const tidioKey = '3x3nqoesg5re64kbwcp6esvufvwasoqn';
 
   const visitor = {
     distinct_id: visitorId,
@@ -52,6 +52,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <title>Snackare talarnätverk</title>
+        <meta name="description" content="På Snackare hittar du föreläsare, moderatorer och underhållare till alla tillfällen. Lär känna våra Snackare idag!" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link
@@ -61,7 +63,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Navbar />
       <Component {...pageProps} />
-      {visitorId && <TidioChat tidioKey={tidioKey} visitor={visitor} />} 
+      {visitorId && <TidioChat tidioKey={tidioKey} visitor={visitor} />}
       <Footer />
     </>
   );
