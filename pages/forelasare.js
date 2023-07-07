@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Card from '../src/components/Card';
 import { useRouter } from 'next/router';
 import { fetchSpeakers } from './_app';
+import { NextSeo } from 'next-seo';
+
+
 
 export async function getStaticProps(context) {
     const speakers = await fetchSpeakers();
