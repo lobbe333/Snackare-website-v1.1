@@ -3,7 +3,7 @@ import RequestForm from '../../src/components/RequestForm';
 import { fetchSpeakers } from "../_app";
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // This imports the styles
-import { NextSeo } from 'next-seo';
+//import { NextSeo } from 'next-seo';
 
 
 function generateSlug(name) {
@@ -92,7 +92,7 @@ export default function SpeakerProfilePage({ currentSpeaker }) {
 
   return (
     <div className='speakerProfile'>
-      <NextSeo
+      {/*<NextSeo
         title={`${currentSpeaker.name} | ${currentSpeaker.roles.map(role => role.toLowerCase()).join(", ")} | Snackare talarnätverk`}
         description={`${currentSpeaker.shortDescription}. Ämnen: ${currentSpeaker.topics.map(topic => topic.toLowerCase()).join(", ")}`}
         openGraph={{
@@ -108,7 +108,7 @@ export default function SpeakerProfilePage({ currentSpeaker }) {
           type: 'profile', // Vi antar att 'profile' är lämpligast eftersom sidan representerar en individuell talare
           locale: 'sv_SE', // Ange att innehållet är på svenska för Sverige
         }}
-      />
+      />*/}
       <div className='speakerProfile-name-bookButton-container'>
         <h1 className='speakerProfile-header-name'>{currentSpeaker.name}</h1>
         <button className='book-speaker-button' onClick={handleOpenRequestForm}>{`Boka ${currentSpeaker.name}`}</button>
