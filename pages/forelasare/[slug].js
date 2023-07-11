@@ -90,20 +90,13 @@ export default function SpeakerProfilePage({ currentSpeaker }) {
     <li><a>{exampleLecture}</a></li>
   ))
 
-  const roleList = currentSpeaker.roles
-    ? (Array.isArray(currentSpeaker.roles)
-      ? currentSpeaker.roles
-      : Object.values(currentSpeaker.roles))
-    : [];
-
-  const topicList = Array.isArray(currentSpeaker.topics) ? currentSpeaker.topics : [];
-
+  
 
   return (
     <div className='speakerProfile'>
       <NextSeo
-        title={`${currentSpeaker.name} | ${roleList.map(role => role.toLowerCase()).join(", ")} | Snackare talarnätverk`}
-        description={`${currentSpeaker.shortDescription}. Ämnen: ${topicList.map(topic => topic.toLowerCase()).join(", ")}`}
+          title={`${currentSpeaker.name} | Snackare talarnätverk`}
+          description={`${currentSpeaker.shortDescription}`}
         openGraph={{
           url: `https://www.snackare.com/speakers/${generateSlug(currentSpeaker.name)}`,
           title: `${currentSpeaker.name} | Föreläsare | Snackare talarnätverk`,
