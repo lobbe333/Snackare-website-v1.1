@@ -17,6 +17,7 @@ import '../src/styles/Navbar.css';
 import '../src/styles/RequestForm.css';
 import '../src/styles/SpeakerProfile.css';
 import '../src/styles/Speakers.css';
+import { DefaultSeo } from 'next-seo';
 import Head from 'next/head';
 
 export async function fetchSpeakers() {
@@ -51,8 +52,6 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Snackare talarnätverk</title>
-        <meta name="description" content="På Snackare hittar du föreläsare, moderatorer och underhållare till alla tillfällen. Lär känna våra Snackare idag!" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link
@@ -60,6 +59,15 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
+      <DefaultSeo
+        title="Snackare talarnätverk"
+        description="På Snackare hittar du föreläsare, moderatorer och underhållare till alla tillfällen. Lär känna våra Snackare idag!"
+        openGraph={{
+          type: 'website',
+          locale: 'sv_SE',
+          site_name: 'Snackare talarnätverk',
+        }}
+      />
       <Navbar />
       <Component {...pageProps} />
       {visitorId && <TidioChat tidioKey={tidioKey} visitor={visitor} />}

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Card from '../src/components/Card';
 import { useRouter } from 'next/router';
 import { fetchSpeakers } from './_app';
-//import { NextSeo } from 'next-seo';
+import { NextSeo } from 'next-seo';
 
 
 
@@ -114,7 +114,7 @@ export default function Forelasare({ speakers, speakersHeader, isFlipped }) {
 
     return (
         <div>
-           {/*<NextSeo
+           <NextSeo
                 title="Våra Föreläsare | Snackare talarnätverk"
                 description="Utforska Snackare talarnätverks föreläsare, moderatorer och underhållare, skräddarsydda för alla evenemang och tillfällen."
                 openGraph={{
@@ -130,7 +130,7 @@ export default function Forelasare({ speakers, speakersHeader, isFlipped }) {
                         },
                     ],
                 }}
-            />*/}
+            />
             <div className="header-search-container">
                 <div className='headers-container'>
                     <h1 className='speakers-header'>{categoryHeader ? categoryHeader : "Alla Snackare"}</h1>
