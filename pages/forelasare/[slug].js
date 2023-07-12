@@ -95,7 +95,7 @@ export default function SpeakerProfilePage({ currentSpeaker }) {
   return (
     <div className='speakerProfile'>
       <NextSeo
-          title={`${currentSpeaker.name} | Snackare talarnätverk`}
+          title={`${currentSpeaker.name} | Föreläsare | Snackare talarnätverk`}
           description={`${currentSpeaker.shortDescription}`}
         openGraph={{
           url: `https://www.snackare.com/speakers/${generateSlug(currentSpeaker.name)}`,
